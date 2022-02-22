@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/prework.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        <div class="nav">
+            <div class="group1"></div>
+            <div class="group2">
+                    <span class="main-heading" onclick="reloadPage()">privnote</span>
+                    <span class="sub-heading">Send notes that will self-destruct <br/>after being read</span>
+            </div>
+            <div class="group3"></div>
+        </div>
+        <!-- <form action="/createNote" method="post"> -->
+        <div class="main-content-1" id="main-content-1" >
+            <div class="group1"></div>
+            <div class="group2">
+                <span style="font-weight: bold; font-size: larger;">New Note</span>
+                <textarea class="textareas" name="inputText" id="inputText"></textarea>
+                <div class="textfields" id="textfields" style="display: none;">
+                    <div class="grid-item"><label for="destroyOptions"><b>Note self-destructs</b></label></div>
+                    <div class="grid-item">&nbsp;</div>
+                    <div class="grid-item">
+                        <select id="destroyOptions" name="destroyOptions">
+                            <option value="reading">after reading it</option>
+                            <option value="1hour">1 Hour from now</option>
+                            <option value="24hour">24 Hour from now</option>
+                            <option value="7days">7 Days from now</option>
+                          </select>
+                    </div>
+                    <div class="grid-item">&nbsp;</div>
+                    <div class="grid-item"><b>Manual password</b></div>
+                    <div class="grid-item">&nbsp;</div>
+                    <div class="grid-item">
+                        <input type="password" name="manualpwd" id="manualpwd" placeholder="Enter a custom password to encrypt the note">
+                        <p class="message-negative" id="negativemsg1">Passwords should match !!</p>
+                        <p class="message-positive" id="positivemsg1">Password matched :)</p>
+                    </div>
+                    <div class="grid-item">
+                        <input type="password" name="remanualpwd" id="remanualpwd" placeholder="Confirm password" onfocusout="pwdMatch()" onfocus="clearMessage()">
+                    </div>
+                    <div class="grid-item"><b>Destruction notification</b></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item">
+                        <input type="text" name="notification" id="notification" placeholder="E-mail to notify when note is destroyed">
+                    </div>
+                    <div class="grid-item">
+                        <input type="text" name="namefornote" id="namefornote" placeholder="Reference name for the note (optional)">
+                    </div>
+
+                </div>
+                <div class="buttonWrapper">
+                    <button class="block1 buttons mainbutton" id="createnote" onclick="encryptNote()">Create Note</button>
+                    <button class="block2 buttons" id="advanceoption" onclick="showHideOptions()">Advance Options</button>
+                </div>
+            </div>
+            <div class="group3"></div>
+        </div>
+        <!-- </form> -->
+        <div class="main-content-2" id="main-content-2" style="display:none">
+            <div class="group1"></div>
+            <div class="group2">
+                <span style="font-weight: bold; font-size: larger;">Note Link Ready</span>
+                <textarea class="textareas-filled" name="inputPreText" id="inputPreText" readonly></textarea>
+                <div class="buttonWrapper">
+                    <button class="block1 buttons" id="selectlink" onclick="selectText('inputPreText')">Select Link</button>
+                    <button class="block1 buttons-middle" id="emaillink" onclick="clickMail()">Email Link</button>
+                    <button class="block2 buttons redish" id="destroynotenow">Destroy Note Now</button>
+                </div>
+            </div>
+            <div class="group3"></div>
+        </div>
+    <footer class="footer"><div class="footer-text">Made with ❤️ by RJ</div></footer>
+    <script src="js/postwork.js"></script>
+</body>
+</html>

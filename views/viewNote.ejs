@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        <div class="nav">
+            <div class="group1"></div>
+            <div class="group2">
+                    <span class="main-heading" onclick="reloadPage()">privnote</span>
+                    <span class="sub-heading">Send notes that will self-destruct <br/>after being read</span>
+            </div>
+            <div class="group3"></div>
+        </div>
+        <div class="main-content-1" id="main-content-1" >
+            <div class="group1"></div>
+            <div class="group2">
+                <span style="font-weight: bold; font-size: larger;">Note Content </span>
+                <textarea class="textareas" name="inputText" id="inputText" readonly><%= text%></textarea>
+            </div>
+            <div class="group3"></div>
+        </div>
+    <footer class="footer"><div class="footer-text">Made with ❤️ by RJ</div></footer>
+    <script src="js/showNote.js"></script>
+</body>
+</html>

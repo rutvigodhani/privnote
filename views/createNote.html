@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/prework.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        <div class="nav">
+            <div class="group1"></div>
+            <div class="group2">
+                    <span class="main-heading" onclick="reloadPage()">privnote</span>
+                    <span class="sub-heading">Send notes that will self-destruct <br/>after being read</span>
+            </div>
+            <div class="group3"></div>
+        </div>
+        <div class="main-content-2" id="main-content-2" style="display:block">
+            <div class="group1"></div>
+            <div class="group2">
+                <span style="font-weight: bold; font-size: larger;">Note Link Ready</span>
+                <textarea class="textareas-filled" name="inputPreText" id="inputPreText" readonly></textarea>
+                <div class="buttonWrapper">
+                    <button class="block1 buttons" id="selectlink" onclick="selectText('inputPreText')">Select Link</button>
+                    <button class="block1 buttons-middle" id="emaillink" onclick="clickMail()">Email Link</button>
+                    <button class="block2 buttons redish" id="destroynotenow">Destroy Note Now</button>
+                </div>
+            </div>
+            <div class="group3"></div>
+        </div>
+    <footer class="footer"><div class="footer-text">Made with ❤️ by RJ</div></footer>
+    <script src="js/postwork.js"></script>
+</body>
+</html>
