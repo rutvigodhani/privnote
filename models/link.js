@@ -8,20 +8,24 @@ class links{
         this.hashValue = hashValue;
     }
     async save(){
-        let sql = `insert into temp(note, destroyWhen, pwd, hashValue) values ('${this.note}','${this.destroyWhen}','${this.pwd}','${this.hashValue}');`;
-        const [newPost,_] = await db.execute(sql);
+        let sql = `insert into temp(note, destroyWhen, pwd, hashValue, createdAt) values ('${this.note}','${this.destroyWhen}','${this.pwd}','${this.hashValue}', NOW());`;
+        const [newPost,_] = await db.query(sql);
         return newPost;
     }
     static async findAll(){
         let sql = `select * from temp`;
-        const [findAll,] = await db.execute(sql);
+        const [findAll,] = await db.query(sql);
         return findAll;
     }
     static async byId(id){
         let sql = `select * from temp where hashValue='${id}'`;
-        console.log(sql);
-        const [byId,] = await db.execute(sql);
+        const [byId,] = await db.query(sql);
         return byId;
+    }
+    static async deletebyId(id){
+        let sql = `delete from temp where hashValue='${id}'`;
+        const [deletebyId,] = await db.query(sql);
+        return deletebyId;
     }
 }
 
