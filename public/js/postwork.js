@@ -67,7 +67,7 @@ function encryptNote(){
     .then(function(response){
         document.getElementById("main-content-1").style = "display:none";
         document.getElementById("main-content-2").style = "";
-        document.getElementById("inputPreText").value = "http://localhost:3000/" + randomString;
+        document.getElementById("inputPreText").value = window.location.href + "/" + randomString;
     })
     .catch(function(error) {
       console.log(error);
