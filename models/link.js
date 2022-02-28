@@ -7,25 +7,19 @@ class links{
         this.pwd = pwd;
         this.hashValue = hashValue;
     }
-    async save(){
-        let sql = `insert into temp(note, destroyWhen, pwd, hashValue, createdAt) values ('${this.note}','${this.destroyWhen}','${this.pwd}','${this.hashValue}', NOW());`;
-        const [newPost,_] = await db.query(sql);
-        return newPost;
+    save(){
+        let sql = `insert into privnote(note, destroyWhen, pwd, hashValue, createdAt) values ('${this.note}','${this.destroyWhen}','${this.pwd}','${this.hashValue}',NOW())`;
+        db.query(sql,(err, res) => {
+            if (err) throw err;
+            });
     }
-    static async findAll(){
-        let sql = `select * from temp`;
-        const [findAll,] = await db.query(sql);
-        return findAll;
+    static byId(id){
+        let sql = `select * from privnote where hashValue='${id}'`;
+        return sql;
     }
-    static async byId(id){
-        let sql = `select * from temp where hashValue='${id}'`;
-        const [byId,] = await db.query(sql);
-        return byId;
-    }
-    static async deletebyId(id){
-        let sql = `delete from temp where hashValue='${id}'`;
-        const [deletebyId,] = await db.query(sql);
-        return deletebyId;
+    static deletebyId(id){
+        let sql = `delete from privnote where hashValue='${id}'`;
+        return sql;
     }
 }
 

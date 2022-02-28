@@ -50,7 +50,7 @@ function selectText(containerid) {
 function encryptNote(){
     inputText = document.getElementById("inputText").value;
     randomString = generateRandomString();
-    data = { note: document.getElementById("inputText").value,
+    data = { note: inputText,
             destroyWhen: document.getElementById("destroyOptions").value,
             pwd: document.getElementById("manualpwd").value,
             hashValue: randomString};
@@ -74,13 +74,33 @@ function encryptNote(){
     });
 }
 
+function destroyNote(){
+    let splitted = document.getElementById("inputPreText").value.split("/");
+    let noteId = splitted[splitted.length - 1];
+    fetch('/deleted', {method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({"noteId": noteId}),
+    })
+    .then(function(response){
+        document.getElementById("inputPreText").value = "Note Deleted Successfully";
+    })
+    .catch(function(error) {
+        document.getElementById("inputPreText").value = "Note could not be Deleted";
+        console.log(error);
+    });
+}
+
 function clickMail(){
     var emailBody = noteLink;
     document.location = "mailto:"+"friendsemail@gmail.com"+"?subject="+"One Time Read Private Note"+"&body="+emailBody;
 }
 
 function reloadPage(){
-    document.getElementById("main-content-1").style = "";
-    document.getElementById("inputText").value = "";
-    document.getElementById("main-content-2").style = "display:none";
+    fetch('/')
+    .then((response) => {
+      if(response.ok) window.location.replace(response.url);
+      else throw new Error(response);
+    })
 }
