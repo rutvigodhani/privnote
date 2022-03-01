@@ -222,3 +222,21 @@ input,select {
     color: white;
     background-color: #960000;
 }
+
+@media only screen and (max-width: 720px) {
+    .group1{
+        width: 5%;
+        margin: 0;
+        padding: 0;
+    }
+    .group2{
+        width: 90%;
+        margin-left: 0;
+        padding: auto;
+    }
+    .group3{
+        width: 5%;
+        margin: 0;
+        padding: 0;
+    }
+  }
