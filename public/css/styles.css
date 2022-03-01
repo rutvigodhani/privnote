@@ -110,8 +110,8 @@
 .buttons{
     display: inline;
     padding: 12px;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: 20px;
+    padding-left: 20px;
     border: none;
     border-radius: 6px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -125,8 +125,8 @@
     margin-left: 20px;
     margin-right: 20px;
     padding: 12px;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: 20px;
+    padding-left: 20px;
     border: none;
     border-radius: 6px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -135,22 +135,12 @@
     /* border: white 2px solid; */
   }
 
-.buttons:hover {
+.buttons:hover, .buttons-middle:hover {
     transition-duration: 0.4s;
     transform: scale(1.05);
 }
 
-.buttons:active {
-    transition-duration: 0.3s;
-    transform: scale(0.97);
-}
-
-.buttons-middle:hover {
-    transition-duration: 0.4s;
-    transform: scale(1.05);
-}
-
-.buttons-middle:active {
+.buttons:active, .buttons-middle:active {
     transition-duration: 0.3s;
     transform: scale(0.97);
 }
@@ -239,4 +229,65 @@ input,select {
         margin: 0;
         padding: 0;
     }
+    #emaillink {
+        display: none;
+    }
+    .textareas{
+        display: block;
+        resize: vertical;
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: calc(100% - 10px);
+        height: 20em;
+        font-size: medium;
+        border: none;
+        background-color: #ffface;
+      }
+
+    .textareas-filled{
+        display: block;
+        resize: none;
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: calc(100% - 10px);
+        height: 1em;
+        font-size: medium;
+        border: none;
+        background-color: #ffface;
+      }
+    .buttons{
+        display: inline;
+        padding: 12px;
+        padding-right: 16px;
+        padding-left: 16px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06);
+        /* border: white 2px solid; */
+      }
+
+    .buttons-middle{
+        display: inline;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 12px;
+        padding-right: 16px;
+        padding-left: 16px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06);
+        /* border: white 2px solid; */
+      }
   }
